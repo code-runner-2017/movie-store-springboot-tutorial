@@ -12,4 +12,9 @@ public class DefaultController {
 	public String index(Model model) {
 		return "hello";
 	}
+	
+   @RequestMapping("sample")
+    public String getSample(Model model) {
+        return "sample";
+    }
 }
