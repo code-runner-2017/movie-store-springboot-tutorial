@@ -1,0 +1,28 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:include="layouts/default::htmlhead" th:with="title='Hello'">
+</head>
+
+<body>
+    <div th:replace="layouts/default::navbar">(navbar)</div>
+
+    <div class="container">
+        <h1>Pages:</h1>
+        <div class="row">
+            <div class="col-md-8">
+
+                <table class='table'>
+                    <tr th:each="link : ${links}">
+                        <td>
+                            <a th:href='${link.value}'><span th:text="${link.key}"></span></a>
+                        </td>
+                    </tr>
+                </table>
+
+            </div>
+        </div>
+    </div>
+
+    <div th:include="layouts/default::footer" id="footer">(footer)</div>
+
+</body>
+</html>

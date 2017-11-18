@@ -1,0 +1,28 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:include="layouts/default::htmlhead" th:with="title='Hello'">
+</head>
+
+<body>
+    <div th:replace="layouts/default::navbar">(navbar)</div>
+
+    <div class="container">
+        <div class="starter-template">
+            <h1>
+                Movie: <span th:text="${movie.title}"></span>
+            </h1>
+
+            <ul>
+                <li>Title: <span th:text="${movie.title}"></span>
+                </li>
+                <li>Director: <span th:text="${movie.director}"></span>
+                </li>
+                <li>Year: <span th:text="${movie.year}"></span>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div th:include="layouts/default::footer" id="footer">(footer)</div>
+
+</body>
+</html>
