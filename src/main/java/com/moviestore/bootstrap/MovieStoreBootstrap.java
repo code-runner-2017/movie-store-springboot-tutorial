@@ -43,6 +43,12 @@ public class MovieStoreBootstrap implements ApplicationListener<ContextRefreshed
         movies.add(bladeRunner);
         movies.add(braveheart);
         movies.add(shining);
+        
+        for (int i = 1; i < 20; i++) {
+            Movie movie = new Movie("Back to the Future "+ i, "Robert Zemeckis", 1980 + i);
+            movies.add(movie);
+        }
+        
         return movies;
     }
 }
