@@ -1,5 +1,5 @@
 <html xmlns:th="http://www.thymeleaf.org">
-<head th:include="layouts/default::htmlhead" th:with="title='Hello'">
+<head th:replace="layouts/default::htmlhead(~{}, ~{})">
 </head>
 
 <body>
