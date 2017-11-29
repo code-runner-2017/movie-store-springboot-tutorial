@@ -17,8 +17,9 @@ public class DefaultController {
         links.put("sample", "/sample");
         links.put("movies", "/movies");
         links.put("/rest/movies", "/rest/movies");
+        links.put("/h2-console", "/h2-console");
         
-        model.addAttribute("links", links);
+        model.addAttribute("links", links);        
         
         return "index";
     }

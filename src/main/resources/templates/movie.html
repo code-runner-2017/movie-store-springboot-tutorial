@@ -12,6 +12,9 @@
         <div class="starter-template">
             <h1>
                 Movie: <span class='movieTitle' th:text="${movie.title}"></span>
+                <button role='button' class='btn' onclick='onAddToCart()'>
+                    <span class="oi oi-cart"></span>+
+                </button>
             </h1>
 
             <ul>
@@ -22,10 +25,25 @@
                 <li>Year: <span th:text="${movie.year}"></span>
                 </li>
             </ul>
+            
+            <div th:each="section: ${sections}">
+                <div th:insert="'sections/' + ${section}"></div>
+            </div>
+            
         </div>
     </div>
 
     <div th:include="layouts/default::footer" id="footer">(footer)</div>
 
+<script>
+function onAddToCart() {
+    $.post('/rest/movies/addToCart', 
+            { id: 1 },
+            function() {
+                console.log("DONE");
+            }
+    );
+}
+</script>
 </body>
 </html>

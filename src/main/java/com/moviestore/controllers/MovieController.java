@@ -33,6 +33,8 @@ public class MovieController {
         Optional<Movie> movie = movieService.getMovie(id);
         model.addAttribute("movie", movie.get());
         
+        model.addAttribute("sections", new String[]{"description", "ratings", "comments"});
+        
         return "movie";
     }  
 }
