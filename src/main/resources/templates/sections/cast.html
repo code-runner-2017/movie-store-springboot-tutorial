@@ -1,0 +1,14 @@
+<table class='table'>
+<thead>
+    <td>Name</td>
+    <td>Role</td>
+    <td>Star</td>
+</thead>
+<tbody>
+    <tr th:each="credit : ${credits}">
+        <td th:text="${credit.name}">Onions</td>
+        <td th:text="${credit.role}">2.41</td>
+        <td th:text="${credit.star}? YES : ''">yes</td>
+    </tr>
+</tbody>
+</table>

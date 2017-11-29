@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.moviestore.domain.Credit;
 import com.moviestore.domain.Movie;
 import com.moviestore.services.MovieService;
 
@@ -34,6 +35,12 @@ public class MovieController {
         model.addAttribute("movie", movie.get());
         
         model.addAttribute("sections", new String[]{"description", "ratings", "comments"});
+        
+        model.addAttribute("credits", new Credit[]{
+                new Credit("Brad Pit", "Policeman", true),
+                new Credit("Al Pacino", "Policeman", true),
+                new Credit("John Doe", "Murder", false)
+        });
         
         return "movie";
     }  
