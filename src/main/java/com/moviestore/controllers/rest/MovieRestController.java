@@ -6,8 +6,10 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
+import org.springframework.data.domain.Page;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.moviestore.domain.Movie;
@@ -21,8 +23,11 @@ public class MovieRestController {
     private MovieService movieService;
     
     @RequestMapping(value="", method = RequestMethod.GET, produces={"application/json; charset=UTF-8"})
-    public Iterable<Movie> movies() {
-        return movieService.getAllMovies();
+    public Iterable<Movie> movies(@RequestParam(value="page", defaultValue="0") Integer pageNr, 
+            @RequestParam(value="pageSize", defaultValue="10") Integer pageSize) {
+
+        Page<Movie> moviesPage = movieService.getAllMoviesInPage(pageNr, pageSize);
+        return moviesPage;
     }
     
     @RequestMapping(value="/addToCart", method = RequestMethod.POST, produces={"application/json; charset=UTF-8"})
