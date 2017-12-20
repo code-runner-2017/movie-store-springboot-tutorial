@@ -1,10 +1,12 @@
 package com.moviestore.controllers;
 
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -30,6 +32,13 @@ public class DefaultController {
         model.addAttribute("msg", "Hello world!");
 		return "hello";
 	}
+    
+    @GetMapping("welcome")
+    public String welcome(Map<String, Object> model) {
+        model.put("time", new Date());
+        model.put("message", "hello");
+        return "welcome";
+    }
 	
    @RequestMapping("sample")
     public String getSample(Model model) {

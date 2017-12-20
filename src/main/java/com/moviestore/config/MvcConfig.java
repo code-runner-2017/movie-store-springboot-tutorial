@@ -30,21 +30,4 @@ public class MvcConfig implements WebMvcConfigurer {
         return driverManagerDataSource;
     }
     */
-    /*
-    @Bean
-    public FreeMarkerViewResolver freemarkerViewResolver() { 
-        FreeMarkerViewResolver resolver = new FreeMarkerViewResolver(); 
-        resolver.setCache(true); 
-        resolver.setPrefix(""); 
-        resolver.setSuffix(".ftl"); 
-        return resolver; 
-    }
-    
-    @Bean 
-    public FreeMarkerConfigurer freemarkerConfig() { 
-        FreeMarkerConfigurer freeMarkerConfigurer = new FreeMarkerConfigurer(); 
-        freeMarkerConfigurer.setTemplateLoaderPath("/WEB-INF/views/ftl/");
-        return freeMarkerConfigurer; 
-    }
-    */
 }
